@@ -89,3 +89,59 @@
   </code></pre>
   > sudo systemctl restart networking
 * guest os 헤드리스 시작
+2. Tesseract install
+* Leptonica install 
+  <pre><code>
+  wget http://www.leptonica.com/source/leptonica-1.74.4.tar.gz
+  tar -xvzf leptonica-1.74.4.tar.gz
+  cd leptonica-1.74.4
+  ./configure 
+  make
+  sudo make install 
+  sudo ldconfig
+  </code></pre>
+* github install
+  <pre><code>
+  sudo add-apt-repository ppa:git-core/ppa
+  sudo apt-get update && sudo apt-get dist-upgrade
+  sudo apt-get install git-core
+
+  git version
+  </code></pre>
+* tesseract install
+  <pre><code>
+  sudo apt-get install g++ # or clang++ (presumably)
+  sudo apt-get install autoconf automake libtool
+  sudo apt-get install autoconf-archive
+  sudo apt-get install pkg-config
+  sudo apt-get install libpng-dev
+  sudo apt-get install libjpeg8-dev
+  sudo apt-get install libtiff5-dev
+  sudo apt-get install zlib1g-dev
+  sudo apt-get install libicu-dev
+  sudo apt-get install libpango1.0-dev
+  sudo apt-get install libcairo2-dev
+
+  # Tesseract LSTM 소스 컴파일
+  git clone https://github.com/tesseract-ocr/tesseract.git tesseract-ocr
+  cd tesseract-ocr
+  ./autogen.sh
+  ./configure
+  make
+  sudo make install
+  make training
+  sudo make training-install
+  sudo ldconfig
+  # 학습완료 데이더 다운로드
+  wget https://github.com/tesseract-ocr/tessdata_best/raw/master/eng.traineddata
+  sudo mv *.traineddata /usr/local/share/tessdata/
+  # 동작확인
+  tesseract test.png out --oem 1 -l eng
+  </code></pre>
+3. tesseract training
+  
+  
+  <pre><code>
+  </code></pre>
+  
+  
