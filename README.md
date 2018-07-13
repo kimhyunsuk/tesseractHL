@@ -2,12 +2,7 @@
 
 1. ubuntu install for windows10
 * Hyper-V 비활성화
-  > MSYS2 MSYS terminal<br>
-  > pacman -Syu<br>
-  > pacman -Su<br>
-  > 환경변수 Path 추가<br>
-  > C:\msys64\mingw64\bin<br>
-  > C:\msys64\usr\bin
+
 
 * CPU의 가상화 지원 확인
 
