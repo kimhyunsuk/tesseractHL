@@ -144,8 +144,14 @@
 
   #ocr text print out only text
   tesseract eng.myfont.exp0.tif out --oem 1 -l eng
+    
+  #box file create
+  tesseract eng.embedsiver.exp0.tif eng.embedsiver.exp0 batch nochop makebox
+
+  #training start
+  tesseract eng.embedsiver.exp0.tif eng.embedsiver.exp0 nobatch box.train
   </code></pre>
-  
+    
 # 추가 과제 
 * 학습 데이터로 OCR 텍스트 추출
 * 이미지에서 텍스트 영역 및 문자 추출
