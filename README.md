@@ -135,13 +135,20 @@
   # 학습완료 데이더 다운로드
   wget https://github.com/tesseract-ocr/tessdata_best/raw/master/eng.traineddata
   sudo mv *.traineddata /usr/local/share/tessdata/
-  # 동작확인
-  tesseract test.png out --oem 1 -l eng
   </code></pre>
-3. tesseract training
-  
-  
+
+* test ocr
   <pre><code>
+  #ocr text print out include coordinate
+  tesseract eng.myfont.exp0.tif out --oem 1 -l eng tsv
+
+  #ocr text print out only text
+  tesseract eng.myfont.exp0.tif out --oem 1 -l eng
   </code></pre>
   
+# 추가 과제 
+* 학습 데이터로 OCR 텍스트 추출
+* 이미지에서 텍스트 영역 및 문자 추출
+
+
   
